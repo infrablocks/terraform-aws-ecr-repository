@@ -8,3 +8,16 @@ resource "aws_s3_bucket" "infrastructure_events" {
     DeploymentIdentifier = "${var.deployment_identifier}"
   }
 }
+
+resource "aws_s3_bucket_notification" "vpc_lifecycle_notifications" {
+  bucket = "${aws_s3_bucket.infrastructure_events.bucket}"
+
+  topic {
+    topic_arn = "${aws_sns_topic.infrastructure_events.arn}"
+
+    events = [
+      "s3:ObjectCreated:*",
+      "s3:ObjectRemoved:*"
+    ]
+  }
+}
