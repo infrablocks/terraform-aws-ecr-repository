@@ -21,6 +21,10 @@ RSpec.configure do |config|
   config.example_status_persistence_file_path = '.rspec_status'
 
   config.add_setting :region, default: 'eu-west-2'
+  config.add_setting :deployment_identifier,
+      default: deployment_identifier || SecureRandom.hex[0, 8]
+  config.add_setting :bucket_name_prefix, default: 'infrastructure-events'
+  config.add_setting :topic_name_prefix, default: 'infrastructure-events'
 
   config.before(:suite) do
     variables = RSpec.configuration
@@ -32,7 +36,11 @@ RSpec.configure do |config|
 
     Terraform.clean
     Terraform.apply(directory: configuration_directory, vars: {
-        region: variables.region
+        region: variables.region,
+        deployment_identifier: variables.deployment_identifier,
+
+        bucket_name_prefix: variables.bucket_name_prefix,
+        topic_name_prefix: variables.topic_name_prefix
     })
 
     puts
@@ -52,7 +60,11 @@ RSpec.configure do |config|
           directory: configuration_directory,
           force: true,
           vars: {
-            region: variables.region
+            region: variables.region,
+            deployment_identifier: variables.deployment_identifier,
+
+            bucket_name_prefix: variables.bucket_name_prefix,
+            topic_name_prefix: variables.topic_name_prefix,
         })
 
       puts
