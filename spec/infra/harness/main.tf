@@ -1,6 +1,5 @@
 module "ecr_repository" {
-  source = "../../../src"
+  source = "../../../../"
 
-  region = "${var.region}"
   repository_name = "${var.repository_name}"
 }
