@@ -15,21 +15,18 @@ To use the module, include something like the following in your terraform config
 
 ```hcl-terraform
 module "repository" {
-  source = "git@github.com:tobyclemson/terraform-aws-ecr-repository.git//src"
+  source = "infrablocks/ecr-repository/aws"
+  version = "0.1.9"
   
-  region = "eu-west-2"
   repository_name = "my-organisation/my-image"
 }
 ```
-
-Executing `terraform get` will fetch the module.
 
 
 ### Inputs
 
 | Name                        | Description                                       | Default | Required |
 |-----------------------------|---------------------------------------------------|:-------:|:--------:|
-| region                      | The region into which to deploy the VPC           | -       | yes      |
 | repository_name             | The repository name to use for the ECR repository | -       | yes      |
 
 
@@ -37,7 +34,7 @@ Executing `terraform get` will fetch the module.
 
 | Name                         | Description                                           |
 |------------------------------|-------------------------------------------------------|
-| registry_id                  | The account ID of the registry holfing the repository |
+| registry_id                  | The account ID of the registry holding the repository |
 | repository_url               | The URL of the repository                             |
 
 
@@ -106,19 +103,20 @@ execute:
 To provision the module contents:
 
 ```bash
-./go provision:aws[<deployment_identifier>]
+./go deployment:harness:provision[<deployment_identifier>]
 ```
 
 To destroy the module contents:
 
 ```bash
-./go destroy:aws[<deployment_identifier>]
+./go deployment:harness:destroy[<deployment_identifier>]
 ```
+
 
 Contributing
 ------------
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/tobyclemson/terraform-aws-base-networking. 
+Bug reports and pull requests are welcome on GitHub at https://github.com/tobyclemson/terraform-aws-ecr-repository. 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to 
 the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
