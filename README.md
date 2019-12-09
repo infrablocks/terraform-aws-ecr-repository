@@ -11,7 +11,8 @@ future.
 Usage
 -----
 
-To use the module, include something like the following in your terraform configuration:
+To use the module, include something like the following in your terraform 
+configuration:
 
 ```hcl-terraform
 module "repository" {
@@ -43,8 +44,8 @@ Development
 
 ### Machine Requirements
 
-In order for the build to run correctly, a few tools will need to be installed on your
-development machine:
+In order for the build to run correctly, a few tools will need to be installed 
+on your development machine:
 
 * Ruby (2.3.1)
 * Bundler
@@ -93,8 +94,8 @@ direnv allow <repository-directory>
 
 ### Running the build
 
-To provision module infrastructure, run tests and then destroy that infrastructure,
-execute:
+To provision module infrastructure, run tests and then destroy that 
+infrastructure, execute:
 
 ```bash
 ./go
@@ -149,12 +150,15 @@ openssl aes-256-cbc \
 Contributing
 ------------
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/tobyclemson/terraform-aws-ecr-repository. 
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to 
-the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at 
+https://github.com/infrablocks/terraform-aws-ecr-repository. This project is 
+intended to be a safe, welcoming space for collaboration, and contributors are 
+expected to adhere to the 
+[Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 License
 -------
 
-The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The library is available as open source under the terms of the 
+[MIT License](http://opensource.org/licenses/MIT).
