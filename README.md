@@ -23,6 +23,9 @@ module "repository" {
 }
 ```
 
+See the 
+[Terraform registry entry](https://registry.terraform.io/modules/infrablocks/ecr-repository/aws/latest) 
+for more details.
 
 ### Inputs
 
@@ -38,6 +41,10 @@ module "repository" {
 | registry_id                  | The account ID of the registry holding the repository |
 | repository_url               | The URL of the repository                             |
 
+### Compatibility
+
+This module is compatible with Terraform versions greater than or equal to 
+Terraform 0.14.
 
 Development
 -----------
