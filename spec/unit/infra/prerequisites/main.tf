@@ -10,11 +10,11 @@ data "aws_iam_policy_document" "assume_role_policy_document" {
 }
 
 resource "aws_iam_role" "test1" {
-  name = "test1"
+  name = "test1-${var.component}-${var.deployment_identifier}"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy_document.json
 }
 
 resource "aws_iam_role" "test2" {
-  name = "test2"
+  name = "test2-${var.component}-${var.deployment_identifier}"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy_document.json
 }
