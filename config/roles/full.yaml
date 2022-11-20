@@ -4,4 +4,6 @@ state_file: "%{cwd}/state/full.tfstate"
 vars:
   region: "%{hiera('region')}"
 
+  component: "%{hiera('component')}"
+
   repository_name: "%{hiera('repository_name')}"

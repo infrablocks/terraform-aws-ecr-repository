@@ -3,6 +3,11 @@ variable "region" {
   type        = string
 }
 
+variable "component" {
+  description = "The name of the component or service for which this repository exists."
+  type        = string
+}
+
 variable "repository_name" {
   description = "The repository name to use for the ECR repository."
   type = string
@@ -25,6 +30,13 @@ variable "repository_image_scanning_scan_on_push" {
   type = bool
   default = true
   nullable = false
+}
+
+variable "tags" {
+  description = "AWS tags to use on created infrastructure components"
+  type        = map(string)
+  default     = {}
+  nullable    = false
 }
 
 variable "allow_in_account_lambda_pull_access" {

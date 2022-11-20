@@ -2,7 +2,13 @@
 
 require 'spec_helper'
 
-describe 'ECR repository', focus: true do
+describe 'ECR repository' do
+  let(:component) do
+    var(role: :root, name: 'component')
+  end
+  let(:deployment_identifier) do
+    var(role: :root, name: 'deployment_identifier')
+  end
   let(:repository_name) do
     var(role: :root, name: 'repository_name')
   end
@@ -45,6 +51,28 @@ describe 'ECR repository', focus: true do
         .to(include_resource_creation(type: 'aws_ecr_repository')
               .with_attribute_value(
                 [:image_scanning_configuration, 0, :scan_on_push], true
+              ))
+    end
+
+    it 'includes the component as a tag' do
+      expect(@plan)
+        .to(include_resource_creation(type: 'aws_ecr_repository')
+              .with_attribute_value(
+                :tags,
+                a_hash_including(
+                  Component: component
+                )
+              ))
+    end
+
+    it 'includes the repository name as a tag' do
+      expect(@plan)
+        .to(include_resource_creation(type: 'aws_ecr_repository')
+              .with_attribute_value(
+                :tags,
+                a_hash_including(
+                  Name: repository_name
+                )
               ))
     end
 
@@ -151,6 +179,51 @@ describe 'ECR repository', focus: true do
         .to(include_resource_creation(type: 'aws_ecr_repository')
               .with_attribute_value(
                 [:image_scanning_configuration, 0, :scan_on_push], false
+              ))
+    end
+  end
+
+  describe 'when tags provided' do
+    before(:context) do
+      @plan = plan(role: :root) do |vars|
+        vars.tags = {
+          Tag1: 'value1',
+          Tag2: 'value2'
+        }
+      end
+    end
+
+    it 'includes the component as a tag' do
+      expect(@plan)
+        .to(include_resource_creation(type: 'aws_ecr_repository')
+              .with_attribute_value(
+                :tags,
+                a_hash_including(
+                  Component: component
+                )
+              ))
+    end
+
+    it 'includes the repository name as a tag' do
+      expect(@plan)
+        .to(include_resource_creation(type: 'aws_ecr_repository')
+              .with_attribute_value(
+                :tags,
+                a_hash_including(
+                  Name: repository_name
+                )
+              ))
+    end
+
+    it 'includes the provided tags' do
+      expect(@plan)
+        .to(include_resource_creation(type: 'aws_ecr_repository')
+              .with_attribute_value(
+                :tags,
+                a_hash_including(
+                  Tag1: 'value1',
+                  Tag2: 'value2'
+                )
               ))
     end
   end

@@ -1,5 +1,7 @@
 variable "region" {}
 
+variable "component" {}
+
 variable "repository_name" {}
 
 variable "repository_force_delete" {
@@ -12,6 +14,10 @@ variable "repository_image_tag_mutability" {
 variable "repository_image_scanning_scan_on_push" {
   type = bool
   default = null
+}
+variable "tags" {
+  type        = map(string)
+  default     = null
 }
 
 variable "allow_in_account_lambda_pull_access" {

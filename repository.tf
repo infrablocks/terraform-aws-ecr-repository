@@ -8,4 +8,8 @@ resource "aws_ecr_repository" "repository" {
   image_scanning_configuration {
     scan_on_push = var.repository_image_scanning_scan_on_push
   }
+
+  tags = merge(local.resolved_tags, {
+    Name: var.repository_name
+  })
 }

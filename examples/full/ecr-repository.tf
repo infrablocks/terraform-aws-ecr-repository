@@ -3,5 +3,7 @@ module "ecr_repository" {
 
   region = var.region
 
+  component = var.component
+
   repository_name = var.repository_name
 }
