@@ -8,15 +8,24 @@ variable "repository_name" {
   type = string
 }
 
-variable "allow_in_account_lambda_access" {
+variable "allow_in_account_lambda_pull_access" {
   type = bool
   default = false
 }
-variable "allow_cross_account_lambda_access" {
+variable "allow_cross_account_lambda_pull_access" {
   type = bool
   default = false
 }
-variable "allowed_cross_account_lambda_access_accounts" {
+variable "allow_role_based_pull_access" {
+  type = bool
+  default = false
+}
+
+variable "allowed_cross_account_lambda_pull_access_account_ids" {
+  type = list(string)
+  default = []
+}
+variable "allowed_role_based_pull_access_role_arns" {
   type = list(string)
   default = []
 }
