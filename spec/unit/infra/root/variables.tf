@@ -2,6 +2,14 @@ variable "region" {}
 
 variable "repository_name" {}
 
+variable "repository_force_delete" {
+  type = bool
+  default = null
+}
+variable "repository_image_tag_mutability" {
+  default = null
+}
+
 variable "allow_in_account_lambda_pull_access" {
   type = bool
   default = null

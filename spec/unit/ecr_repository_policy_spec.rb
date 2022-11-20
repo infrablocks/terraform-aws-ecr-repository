@@ -690,9 +690,9 @@ describe 'ECR repository policy' do
                     )
                   ),
                   Action: %w[
-                        ecr:BatchGetImage
-                        ecr:GetDownloadUrlForLayer
-                      ]
+                    ecr:BatchGetImage
+                    ecr:GetDownloadUrlForLayer
+                  ]
                 )
               ))
     end
@@ -810,9 +810,9 @@ describe 'ECR repository policy' do
                     )
                   ),
                   Action: %w[
-                        ecr:BatchGetImage
-                        ecr:GetDownloadUrlForLayer
-                      ]
+                    ecr:BatchGetImage
+                    ecr:GetDownloadUrlForLayer
+                  ]
                 )
               ))
     end
