@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'ECR repository' do
+describe 'ECR repository', focus: true do
   let(:repository_name) do
     var(role: :root, name: 'repository_name')
   end
@@ -37,6 +37,14 @@ describe 'ECR repository' do
         .to(include_resource_creation(type: 'aws_ecr_repository')
               .with_attribute_value(
                 :force_delete, false
+              ))
+    end
+
+    it 'enables image scanning on push' do
+      expect(@plan)
+        .to(include_resource_creation(type: 'aws_ecr_repository')
+              .with_attribute_value(
+                [:image_scanning_configuration, 0, :scan_on_push], true
               ))
     end
 
@@ -111,6 +119,38 @@ describe 'ECR repository' do
         .to(include_resource_creation(type: 'aws_ecr_repository')
               .with_attribute_value(
                 :force_delete, false
+              ))
+    end
+  end
+
+  describe 'when repository_image_scanning_scan_on_push is true' do
+    before(:context) do
+      @plan = plan(role: :root) do |vars|
+        vars.repository_image_scanning_scan_on_push = true
+      end
+    end
+
+    it 'enables image scanning on push' do
+      expect(@plan)
+        .to(include_resource_creation(type: 'aws_ecr_repository')
+              .with_attribute_value(
+                [:image_scanning_configuration, 0, :scan_on_push], true
+              ))
+    end
+  end
+
+  describe 'when repository_image_scanning_scan_on_push is false' do
+    before(:context) do
+      @plan = plan(role: :root) do |vars|
+        vars.repository_image_scanning_scan_on_push = false
+      end
+    end
+
+    it 'disables image scanning on push' do
+      expect(@plan)
+        .to(include_resource_creation(type: 'aws_ecr_repository')
+              .with_attribute_value(
+                [:image_scanning_configuration, 0, :scan_on_push], false
               ))
     end
   end

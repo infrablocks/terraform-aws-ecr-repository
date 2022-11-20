@@ -20,6 +20,12 @@ variable "repository_image_tag_mutability" {
   default = "IMMUTABLE"
   nullable = false
 }
+variable "repository_image_scanning_scan_on_push" {
+  description = "Indicates whether images are scanned after being pushed to the repository (true) or not scanned (false). Defaults to true"
+  type = bool
+  default = true
+  nullable = false
+}
 
 variable "allow_in_account_lambda_pull_access" {
   type = bool

@@ -7,7 +7,8 @@ module "ecr_repository" {
 
   repository_force_delete = var.repository_force_delete
 
-  repository_image_tag_mutability = var.repository_image_tag_mutability
+  repository_image_tag_mutability        = var.repository_image_tag_mutability
+  repository_image_scanning_scan_on_push = var.repository_image_scanning_scan_on_push
 
   allow_in_account_lambda_pull_access    = var.allow_in_account_lambda_pull_access
   allow_cross_account_lambda_pull_access = var.allow_cross_account_lambda_pull_access
