@@ -18,7 +18,8 @@ data "aws_iam_policy_document" "allow_in_account_lambda_pull_access_statement" {
 
     actions = [
       "ecr:GetDownloadUrlForLayer",
-      "ecr:BatchGetImage"
+      "ecr:BatchGetImage",
+      "ecr:DescribeImages"
     ]
   }
 }
@@ -39,7 +40,8 @@ data "aws_iam_policy_document" "allow_aws_principal_pull_access_statement" {
 
     actions = [
       "ecr:GetDownloadUrlForLayer",
-      "ecr:BatchGetImage"
+      "ecr:BatchGetImage",
+      "ecr:DescribeImages"
     ]
   }
 }
@@ -57,7 +59,8 @@ data "aws_iam_policy_document" "allow_cross_account_lambda_pull_access_statement
 
     actions = [
       "ecr:GetDownloadUrlForLayer",
-      "ecr:BatchGetImage"
+      "ecr:BatchGetImage",
+      "ecr:DescribeImages"
     ]
 
     condition {

@@ -69,6 +69,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -92,6 +93,7 @@ describe 'ECR repository policy' do
                       Action: %w[
                         ecr:BatchGetImage
                         ecr:GetDownloadUrlForLayer
+                        ecr:DescribeImages
                       ]
                     )
                   ))
@@ -115,6 +117,7 @@ describe 'ECR repository policy' do
                       Action: %w[
                         ecr:BatchGetImage
                         ecr:GetDownloadUrlForLayer
+                        ecr:DescribeImages
                       ]
                     )
                   ))
@@ -212,6 +215,7 @@ describe 'ECR repository policy' do
                       Action: %w[
                         ecr:BatchGetImage
                         ecr:GetDownloadUrlForLayer
+                        ecr:DescribeImages
                       ]
                     )
                   ))
@@ -255,6 +259,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ],
                   Condition: a_hash_including(
                     StringLike: a_hash_including(
@@ -309,6 +314,7 @@ describe 'ECR repository policy' do
                       Action: %w[
                         ecr:BatchGetImage
                         ecr:GetDownloadUrlForLayer
+                        ecr:DescribeImages
                       ]
                     )
                   ))
@@ -332,6 +338,7 @@ describe 'ECR repository policy' do
                       Action: %w[
                         ecr:BatchGetImage
                         ecr:GetDownloadUrlForLayer
+                        ecr:DescribeImages
                       ]
                     )
                   ))
@@ -355,6 +362,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -375,6 +383,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ],
                   Condition: a_hash_including(
                     StringLike: a_hash_including(
@@ -429,6 +438,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -452,6 +462,7 @@ describe 'ECR repository policy' do
                       Action: %w[
                         ecr:BatchGetImage
                         ecr:GetDownloadUrlForLayer
+                        ecr:DescribeImages
                       ]
                     )
                   ))
@@ -475,6 +486,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -495,6 +507,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ],
                   Condition: a_hash_including(
                     StringLike: a_hash_including(
@@ -549,6 +562,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -572,6 +586,7 @@ describe 'ECR repository policy' do
                       Action: %w[
                         ecr:BatchGetImage
                         ecr:GetDownloadUrlForLayer
+                        ecr:DescribeImages
                       ]
                     )
                   ))
@@ -595,6 +610,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -615,6 +631,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ],
                   Condition: a_hash_including(
                     StringLike: a_hash_including(
@@ -669,6 +686,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -692,6 +710,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -715,6 +734,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -735,6 +755,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ],
                   Condition: a_hash_including(
                     StringLike: a_hash_including(
@@ -789,6 +810,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -835,6 +857,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ]
                 )
               ))
@@ -855,6 +878,7 @@ describe 'ECR repository policy' do
                   Action: %w[
                     ecr:BatchGetImage
                     ecr:GetDownloadUrlForLayer
+                    ecr:DescribeImages
                   ],
                   Condition: a_hash_including(
                     StringLike: a_hash_including(
