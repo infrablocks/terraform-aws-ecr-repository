@@ -5,3 +5,8 @@ component: 'test'
 deployment_identifier: "%{hiera('seed')}"
 
 repository_name: "%{hiera('deployment_identifier')}"
+
+other_account_ids: [
+  '554132201092',
+  '394549888139'
+]

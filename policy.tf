@@ -63,8 +63,8 @@ data "aws_iam_policy_document" "allow_cross_account_lambda_pull_access_statement
     condition {
       test   = "StringLike"
       values = [
-      for account_id in var.allowed_cross_account_lambda_pull_access_account_ids :
-      "arn:aws:lambda:${var.region}:${account_id}:function:*"
+        for account_id in var.allowed_cross_account_lambda_pull_access_account_ids :
+          "arn:aws:lambda:${var.region}:${account_id}:function:*"
       ]
       variable = "aws:sourceARN"
     }

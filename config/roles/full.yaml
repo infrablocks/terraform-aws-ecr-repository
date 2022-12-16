@@ -5,5 +5,8 @@ vars:
   region: "%{hiera('region')}"
 
   component: "%{hiera('component')}"
+  deployment_identifier: "%{hiera('deployment_identifier')}"
 
   repository_name: "%{hiera('repository_name')}"
+
+  allowed_lambda_account_ids: "%{hiera('other_account_ids')}"
