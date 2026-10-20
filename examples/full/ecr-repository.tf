@@ -13,7 +13,7 @@ module "ecr_repository" {
 
   allow_role_based_pull_access = true
   allowed_role_based_pull_access_role_arns = [
-    aws_iam_role.role1.arn,
-    aws_iam_role.role2.arn
+    time_sleep.wait_for_role_propagation.triggers["role1_arn"],
+    time_sleep.wait_for_role_propagation.triggers["role2_arn"]
   ]
 }
