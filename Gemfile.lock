@@ -1685,8 +1685,7 @@ GEM
       ruby-terraform (~> 1.4)
     rchardet (1.8.0)
     regexp_parser (2.9.2)
-    rexml (3.3.2)
-      strscan
+    rexml (3.3.9)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -1749,7 +1748,6 @@ GEM
       evalhook (>= 0.6.0)
       getsource (>= 0.1.0)
     sshkey (2.0.0)
-    strscan (3.1.0)
     sync (0.5.0)
     term-ansicolor (1.10.4)
       mize (~> 0.5)
